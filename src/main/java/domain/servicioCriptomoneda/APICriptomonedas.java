@@ -16,7 +16,7 @@ import java.util.List;
 public class APICriptomonedas {
     public static List<Criptomoneda> Get_Criptomonedas() throws IOException {
         List<Criptomoneda> criptomonedas = new ArrayList<Criptomoneda>();
-        String url = "https://api.coincap.io/v2/assets";
+        String url = "https://api.coincap.io/v2/assets/";
         CloseableHttpClient httpClient = HttpClients.createDefault();
         try {
             HttpGet request = new HttpGet(url);
@@ -26,7 +26,7 @@ public class APICriptomonedas {
             try {
                 HttpEntity entity = response.getEntity();
                 if (entity != null && response.getStatusLine().getStatusCode() == 200) { // Debo validar que el codigo sea 200, sino hay algun problema con la API
-                    // Traigo el string de ML
+                    // Traigo el string
                     String result = EntityUtils.toString(entity);
 
                     // Convierto a un objeto JSON y traigo el array con las criptomonedas

@@ -13,6 +13,17 @@ public class Moneda {
         this.venta = venta;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public double getCompra(){
+        return Double.parseDouble(compra);
+    }
+    public double getVenta(){
+        return Double.parseDouble(venta);
+    }
+
     public String toString(){
         return "Cotizacion dolar oficial\n\n" + "Fecha: "+fecha+"\nDolar venta: "+venta
                 +"\tDolar compra: "+compra;
